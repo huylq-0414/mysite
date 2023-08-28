@@ -4,6 +4,7 @@ from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from catalog import views 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,4 +14,5 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('catalog/', include('catalog.urls')),
+    path('admin/', admin.site.urls),
 )
